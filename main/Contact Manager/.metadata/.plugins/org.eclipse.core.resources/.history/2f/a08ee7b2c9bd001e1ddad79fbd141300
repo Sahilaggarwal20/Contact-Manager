@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org" th:replace="base::Layout(~{::div})">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manager - About</title>
+ 
+</head>
+
+<body>
+
+    <div class="main-content">
+        <h2>About Contact Manager</h2>
+        <p>Contact Manager is a web application designed to help you organize and manage your contacts seamlessly.
+            Whether you're a business professional or an individual, our platform provides a user-friendly interface
+            for easy contact management.</p>
+        <p>Key Features:</p>
+        <ul>
+            <li>Efficiently organize your contacts.</li>
+            <li>Add, edit, and delete contacts with ease.</li>
+            <li>User-friendly interface for a smooth experience.</li>
+            <li>Secure login to protect your contact information.</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org" th:replace="Normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>User DashBoard</title>
+<style>
+	h1{
+		color: black;
+	}
+	
+</style>
+</head>
+
+<body>
+	<section>
+		<h3> Welcome!!</h3>
+		<h3>User Name: <span th:text="${user.name}"></span> </h1>
+		<h3>User Email: <span th:text="${user.email}"></span> </h1>
+		<h3><a href="" th:href="@{/logout}">Logout</a> </h3>
+	</section>
+
+</body>
+
+</html>

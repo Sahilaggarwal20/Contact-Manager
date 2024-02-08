@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This Is Login Page</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        .login-form {
+            padding: 5%;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .login-form h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btnSubmit {
+            width: 50%;
+            border-radius: 1rem;
+            padding: 1.5%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .ForgetPwd {
+            color: #0062cc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="col-md-6 login-form">
+        <h3>Login</h3>
+        <div th:if="${param.error}">
+        <p style="color: red;">Invalid credentials. Please try again.</p>
+    </div>
+
+    <!-- Display logout message if present in the model -->
+    <div th:if="${param.logout}">
+        <p style="color: green;">You have been logged out successfully.</p>
+    </div>
+
+        
+        <form id="Login-form" class="form" th:action="@{/dologin}" method="post" onsubmit="validateLogin(event)">
+            <div class="form-group">
+                <label for="username" class="text-info">Username:</label>
+                <input type="text" name="username" id="username" class="form-control" required>            </div>
+            <div class="form-group">
+                <label for="password" class="text-info">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" required>            </div>
+            <div class="form-group">
+	<input type="submit" name="Submit" class="btn btn-info btn-md" value="Submit">
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+
+</html>
